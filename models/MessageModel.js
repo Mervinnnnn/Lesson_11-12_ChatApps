@@ -31,5 +31,5 @@ const messageSchema = new mongoose.Schema({
 },{
     timestamps : true
 })
-
+// push
 export default mongoose.model('Message', messageSchema)
