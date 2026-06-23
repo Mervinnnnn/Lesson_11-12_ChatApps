@@ -2,7 +2,7 @@ import User from "../models/UserModel.js";
 
 export const registerPage = (req,res) =>{
     if(req.session.user){
-        return res.redirect('/auth/chat')
+        return res.redirect('/chat')
     }
     res.render('auth/register',{
         title : 'Register',
@@ -35,7 +35,7 @@ export const registerUser = async(req,res)=>{
 
 export const loginPage = (req,res) =>{
     if(req.session.user){
-        return res.redirect('/auth/chat')
+        return res.redirect('/chat')
     }
     const error = req.session.error || null
     const success = req.session.success || null
@@ -61,7 +61,7 @@ export const loginUser = async(req,res) =>{
     const isMatch = await user.comparePassword(password)
     if(!isMatch){
         req.session.error = "Wrong Password"
-        return res.redirect('/auth/login ')
+        return res.redirect('/auth/login')
     }
 
     //save session user
@@ -74,7 +74,7 @@ export const loginUser = async(req,res) =>{
         isActive : user.isActive
     }
 
-    return res.redirect('/auth/chat')
+    return res.redirect('/chat')
 
 }
 

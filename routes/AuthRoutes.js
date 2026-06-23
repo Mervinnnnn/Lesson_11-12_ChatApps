@@ -9,7 +9,6 @@ router.get("/login", loginPage)
 router.post('/login', loginUser)
 router.post('/register', registerUser)
 router.get('/logout', logOutUser)
-router.get("/chat", chatPage)
 
 
 export default router
