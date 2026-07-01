@@ -22,7 +22,7 @@ const sessionMiddleware = (session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/MongoDB-Mervin'
+    mongoUrl: process.env.MONGO_URI
   }),
   cookie: {
     maxAge: 1000 * 60 * 60 * 24
