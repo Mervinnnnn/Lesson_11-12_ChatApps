@@ -18,7 +18,7 @@ const port = 3001
 
 
 const sessionMiddleware = (session({
-  secret: 'randomStringOfSecret123@123009',
+  secret: process.env.SECRET_KEY,
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
